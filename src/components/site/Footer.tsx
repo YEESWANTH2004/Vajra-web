@@ -1,4 +1,4 @@
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo/vajra-logo.webp";
 import { Reveal } from "./Reveal";
 
 export function Footer() {
@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-primary-foreground/15 pt-8">
-          <img src={logo.url} alt="Vajra Alloys" className="h-10 w-auto brightness-0 invert" />
+          <img src={logo} alt="Vajra Alloys" className="h-12 w-auto" />
           <p className="text-xs tracking-[0.18em] text-primary-foreground/45 uppercase">
             A subsidiary of Krishca Strapping Solutions Limited
           </p>
