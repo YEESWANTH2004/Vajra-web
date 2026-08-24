@@ -8,16 +8,25 @@ export function Process() {
       <div className="mx-auto max-w-[88rem] px-5 lg:px-10">
         <SectionHeading eyebrow="How it is made" title="Cold Rolling Process" />
 
-        <div className="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <motion.span
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="pointer-events-none absolute top-1/2 right-8 left-8 hidden h-px origin-left bg-accent/35 lg:block"
+          />
           {coldRollingFlow.map((step, i) => (
             <motion.div
               key={step}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24, clipPath: "inset(0 100% 0 0)" }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: i * 0.07 }}
-              className="clip-chevron group relative border border-border bg-surface px-6 py-7 transition-colors hover:border-accent"
+              animate={{ clipPath: "inset(0 0% 0 0)" }}
+              transition={{ duration: 0.55, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className="clip-chevron group relative border border-border bg-surface px-6 py-7 shadow-[0_18px_40px_-34px_rgba(31,42,90,0.45)] transition duration-500 hover:-translate-y-1 hover:border-accent hover:bg-background"
             >
+              <span className="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-accent transition duration-500 group-hover:scale-x-100" />
               <span className="text-display text-sm font-semibold text-accent">
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -63,9 +72,17 @@ export function Process() {
       <div className="mt-24 bg-surface py-20 lg:mt-32">
         <div className="mx-auto max-w-[88rem] px-5 lg:px-10">
           <SectionHeading eyebrow="End to end" title="Superalloy Manufacturing Process" />
-          <div className="mt-12 space-y-8">
+          <div className="relative mt-12 space-y-8">
+            <motion.span
+              initial={{ scaleY: 0 }}
+              whileInView={{ scaleY: 1 }}
+              viewport={{ once: true, margin: "-80px" }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute top-2 bottom-2 left-3 hidden w-px origin-top bg-accent/40 md:block"
+            />
             {superalloyFlow.map((row, ri) => (
-              <div key={ri} className="relative">
+              <div key={ri} className="relative md:pl-12">
+                <span className="absolute top-5 left-1 hidden h-5 w-5 border border-accent bg-surface md:block" />
                 <div className="flex flex-wrap gap-3">
                   {row.map((node, ni) => (
                     <motion.span
@@ -74,7 +91,7 @@ export function Process() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true, margin: "-50px" }}
                       transition={{ duration: 0.45, delay: ni * 0.06 }}
-                      className={`text-display px-5 py-4 text-base font-semibold tracking-wide ${
+                      className={`text-display px-5 py-4 text-base font-semibold tracking-wide shadow-[0_12px_28px_-24px_rgba(31,42,90,0.7)] transition duration-500 hover:-translate-y-0.5 ${
                         ri === 0
                           ? "bg-primary text-primary-foreground"
                           : ri === superalloyFlow.length - 1

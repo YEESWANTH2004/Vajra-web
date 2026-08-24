@@ -1,4 +1,5 @@
 import logo from "@/assets/logo/vajra-logo.webp";
+import { motion } from "framer-motion";
 import { Reveal } from "./Reveal";
 
 export function Footer() {
@@ -57,10 +58,24 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-primary-foreground/15 pt-8">
-          <img src={logo} alt="Vajra Alloys" className="h-12 w-auto" />
-          <p className="text-xs tracking-[0.18em] text-primary-foreground/45 uppercase">
+          <motion.img
+            src={logo}
+            alt="Vajra Alloys"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="h-12 w-auto"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+            className="text-xs tracking-[0.18em] text-primary-foreground/45 uppercase"
+          >
             A subsidiary of Krishca Strapping Solutions Limited
-          </p>
+          </motion.p>
         </div>
       </div>
     </footer>

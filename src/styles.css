@@ -142,6 +142,10 @@
 
 @utility marquee-track {
   animation: vajra-marquee 38s linear infinite;
+
+  &:hover {
+    animation-play-state: paused;
+  }
 }
 
 @keyframes vajra-marquee {

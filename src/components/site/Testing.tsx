@@ -22,7 +22,8 @@ export function Testing() {
                 alt={t.title}
                 className="aspect-[4/3] w-full object-cover transition duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/25 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/25 to-transparent transition duration-500 group-hover:via-navy-deep/45" />
+              <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent transition duration-500 group-hover:scale-x-100" />
               <figcaption className="absolute inset-x-0 bottom-0 flex items-center gap-3 p-6">
                 <span className="h-px w-8 bg-accent transition-all duration-500 group-hover:w-14" />
                 <span className="text-display text-lg font-semibold text-primary-foreground">{t.title}</span>

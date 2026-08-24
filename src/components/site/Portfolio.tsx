@@ -54,11 +54,13 @@ export function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3, delay: Math.min(i * 0.015, 0.3) }}
-                    className="border-b border-border transition-colors hover:bg-surface"
+                    className="group border-b border-border transition-colors hover:bg-surface"
                   >
                     <td className="px-4 py-4 text-muted-foreground">{p.no}</td>
                     <td className="px-4 py-4 text-muted-foreground">{p.category}</td>
-                    <td className="text-display px-4 py-4 text-base font-semibold text-primary">{p.grade}</td>
+                    <td className="text-display px-4 py-4 text-base font-semibold text-primary transition-colors group-hover:text-accent-foreground">
+                      {p.grade}
+                    </td>
                     <td className="px-4 py-4 text-muted-foreground">{p.chemistry}</td>
                     <td className="px-4 py-4 text-muted-foreground">{p.form}</td>
                     <td className="px-4 py-4 text-primary">{p.application}</td>

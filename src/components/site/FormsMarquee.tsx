@@ -12,7 +12,10 @@ export function FormsMarquee() {
       <div className="relative">
         <div className="marquee-track flex w-max items-end gap-16 px-8">
           {items.map((f, i) => (
-            <figure key={`${f.label}-${i}`} className="group flex w-36 shrink-0 flex-col items-center gap-3">
+            <figure
+              key={`${f.label}-${i}`}
+              className="group flex w-36 shrink-0 flex-col items-center gap-3 border border-transparent px-4 py-3 transition duration-500 hover:border-accent/50 hover:bg-background"
+            >
               <img
                 src={f.url}
                 alt={`${f.label} form`}

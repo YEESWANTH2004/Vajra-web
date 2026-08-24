@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { facilities } from "@/data/vajra";
@@ -7,16 +7,28 @@ import { SectionHeading } from "./Reveal";
 export function Facilities() {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start" });
   const [selected, setSelected] = useState(0);
+  const [activeHeight, setActiveHeight] = useState<number>();
+  const slideRefs = useRef<Array<HTMLDivElement | null>>([]);
+
+  const updateActiveHeight = useCallback((index: number) => {
+    const slide = slideRefs.current[index];
+    if (slide) setActiveHeight(slide.offsetHeight);
+  }, []);
 
   const onSelect = useCallback(() => {
-    if (embla) setSelected(embla.selectedScrollSnap());
-  }, [embla]);
+    if (!embla) return;
+    const index = embla.selectedScrollSnap();
+    setSelected(index);
+    updateActiveHeight(index);
+  }, [embla, updateActiveHeight]);
 
   useEffect(() => {
     if (!embla) return;
     onSelect();
+    embla.on("resize", onSelect);
     embla.on("select", onSelect);
     return () => {
+      embla.off("resize", onSelect);
       embla.off("select", onSelect);
     };
   }, [embla, onSelect]);
@@ -58,14 +70,31 @@ export function Facilities() {
           ))}
         </div>
 
-        <div className="mt-10 overflow-hidden" ref={emblaRef}>
-          <div className="flex">
-            {facilities.map((f) => (
-              <div key={f.id} className="min-w-0 flex-[0_0_100%] pr-0 lg:pr-6">
+        <div
+          className="mt-10 overflow-hidden transition-[height] duration-500 ease-out"
+          ref={emblaRef}
+          style={activeHeight ? { height: activeHeight } : undefined}
+        >
+          <div className="flex items-start">
+            {facilities.map((f, i) => (
+              <div
+                key={f.id}
+                aria-hidden={selected !== i}
+                ref={(node) => {
+                  slideRefs.current[i] = node;
+                }}
+                className="min-w-0 flex-[0_0_100%] pr-0 lg:pr-6"
+              >
                 <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-                  <div className="relative overflow-hidden">
-                    <img src={f.image} alt={f.title} className="aspect-[4/3] w-full object-cover" />
+                  <div className="group relative overflow-hidden">
+                    <img
+                      src={f.image}
+                      alt={f.title}
+                      className="aspect-[4/3] w-full object-cover transition duration-1000 group-hover:scale-105"
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 to-transparent" />
+                    <span className="absolute top-5 left-5 h-12 w-12 border-t-2 border-l-2 border-accent opacity-0 transition duration-500 group-hover:opacity-100" />
+                    <span className="absolute right-5 bottom-5 h-12 w-12 border-r-2 border-b-2 border-accent opacity-0 transition duration-500 group-hover:opacity-100" />
                     <span className="absolute bottom-0 left-0 h-1 w-32 bg-accent" />
                   </div>
                   <div className="flex flex-col justify-center">
@@ -81,10 +110,17 @@ export function Facilities() {
                     {f.specs.length > 0 && (
                       <dl className="mt-8 divide-y divide-primary-foreground/15 border-y border-primary-foreground/15">
                         {f.specs.map((s) => (
-                          <div key={s.label} className="flex flex-wrap justify-between gap-3 py-3">
+                          <motion.div
+                            key={s.label}
+                            initial={{ opacity: 0, x: 14 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.45 }}
+                            className="flex flex-wrap justify-between gap-3 py-3"
+                          >
                             <dt className="eyebrow text-primary-foreground/50">{s.label}</dt>
                             <dd className="text-display text-lg font-semibold text-accent">{s.value}</dd>
-                          </div>
+                          </motion.div>
                         ))}
                       </dl>
                     )}

@@ -6,11 +6,12 @@ export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "18%"]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section id="top" ref={ref} className="relative min-h-[100svh] overflow-hidden bg-navy-deep">
-      <motion.div style={{ y }} className="absolute inset-0">
+      <motion.div style={{ y, scale }} className="absolute inset-0 origin-center">
         <img src={hero.url} alt="Vajra Alloys ESR furnace on the plant floor" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/85 to-navy-deep/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/60" />
@@ -34,6 +35,12 @@ export function Hero() {
         >
           Superalloy &amp; Special Steel
         </motion.span>
+        <motion.span
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 0.9, delay: 0.32, ease: [0.22, 1, 0.36, 1] }}
+          className="mt-5 block h-px w-40 origin-left bg-accent/80"
+        />
 
         <h1 className="mt-6 max-w-4xl">
           <motion.span

@@ -48,7 +48,13 @@ export function SectionHeading({
       >
         {title}
       </h2>
-      <span className="mt-5 block h-1 w-16 bg-accent" />
+      <motion.span
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        viewport={{ once: true, margin: "-80px" }}
+        transition={{ duration: 0.7, delay: 0.16, ease: [0.22, 1, 0.36, 1] }}
+        className="mt-5 block h-1 w-16 origin-left bg-accent"
+      />
     </Reveal>
   );
 }

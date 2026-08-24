@@ -98,22 +98,28 @@ export function Header() {
           >
             <div className="mx-auto flex max-w-[88rem] flex-col">
               {links.map((l) => (
-                <a
+                <motion.a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.22, delay: links.indexOf(l) * 0.035 }}
                   className="eyebrow border-b border-border py-4 text-primary/75 transition-colors last:border-b-0 hover:text-primary"
                 >
                   {l.label}
-                </a>
+                </motion.a>
               ))}
-              <a
+              <motion.a
                 href="#contact"
                 onClick={() => setOpen(false)}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.22, delay: 0.24 }}
                 className="eyebrow mt-4 bg-primary px-5 py-4 text-center text-primary-foreground transition-colors hover:bg-navy-deep sm:hidden"
               >
                 Enquire
-              </a>
+              </motion.a>
             </div>
           </motion.nav>
         )}
