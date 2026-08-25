@@ -33,11 +33,11 @@ export function Portfolio() {
           ))}
         </div>
 
-        <div className="mt-10 overflow-x-auto">
-          <table className="w-full min-w-[54rem] border-collapse text-left text-sm">
-            <thead>
+        <div className="table-scroll-blue mt-10 max-h-[36rem] overflow-auto border border-border bg-background">
+          <table className="w-full min-w-[72rem] border-collapse text-left text-sm">
+            <thead className="sticky top-0 z-10">
               <tr className="bg-primary text-primary-foreground">
-                {["#", "Category", "Grade", "Chemistry", "Form", "Application"].map((h) => (
+                {["S.no", "Category", "Grade/Trade Name", "Chemistry", "Form", "Application"].map((h) => (
                   <th key={h} className="eyebrow px-4 py-4 text-primary-foreground/80">
                     {h}
                   </th>

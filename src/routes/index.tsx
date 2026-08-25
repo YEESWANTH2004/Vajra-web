@@ -3,10 +3,7 @@ import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { FormsMarquee } from "@/components/site/FormsMarquee";
 import { About } from "@/components/site/About";
-import { Principles } from "@/components/site/Principles";
 import { Facilities } from "@/components/site/Facilities";
-import { Process } from "@/components/site/Process";
-import { Portfolio } from "@/components/site/Portfolio";
 import { Testing } from "@/components/site/Testing";
 import { Footer } from "@/components/site/Footer";
 
@@ -36,10 +33,7 @@ function Index() {
         <Hero />
         <FormsMarquee />
         <About />
-        <Principles />
         <Facilities />
-        <Process />
-        <Portfolio />
         <Testing />
       </main>
       <Footer />

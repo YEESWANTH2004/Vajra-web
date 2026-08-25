@@ -2,16 +2,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo/vajra-logo.webp";
-
-const links = [
-  { href: "#about", label: "About" },
-  { href: "#principles", label: "Mission" },
-  { href: "#facilities", label: "Facilities" },
-  { href: "#process", label: "Process" },
-  { href: "#portfolio", label: "Portfolio" },
-  { href: "#testing", label: "Testing" },
-  { href: "#contact", label: "Contact" },
-];
+import { navigationLinks } from "@/content/navigation";
 
 export function Header() {
   const { scrollYProgress } = useScroll();
@@ -44,11 +35,17 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex h-20 max-w-[88rem] items-center justify-between px-5 lg:px-10">
-        <a href="#top" className="flex items-center">
-          <img src={logo} alt="Vajra Alloys" className="h-10 w-auto lg:h-12" />
+        <a href="/" className="flex items-center">
+          <img
+            src={logo}
+            alt="Vajra Alloys"
+            className={`h-10 w-auto transition duration-300 lg:h-12 ${
+              solid || open ? "" : "brightness-0 invert"
+            }`}
+          />
         </a>
         <nav className="hidden items-center gap-8 lg:flex">
-          {links.map((l) => (
+          {navigationLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -65,7 +62,7 @@ export function Header() {
         </nav>
         <div className="flex items-center gap-3">
           <a
-            href="#contact"
+            href="/contact"
             className="eyebrow clip-chevron hidden bg-primary px-5 py-3 text-primary-foreground transition-colors hover:bg-navy-deep sm:inline-flex"
           >
             Enquire
@@ -97,21 +94,21 @@ export function Header() {
             className="border-t border-border bg-background px-5 py-5 shadow-[0_18px_50px_rgba(31,42,90,0.16)] lg:hidden"
           >
             <div className="mx-auto flex max-w-[88rem] flex-col">
-              {links.map((l) => (
+              {navigationLinks.map((l) => (
                 <motion.a
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.22, delay: links.indexOf(l) * 0.035 }}
+                  transition={{ duration: 0.22, delay: navigationLinks.indexOf(l) * 0.035 }}
                   className="eyebrow border-b border-border py-4 text-primary/75 transition-colors last:border-b-0 hover:text-primary"
                 >
                   {l.label}
                 </motion.a>
               ))}
               <motion.a
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}

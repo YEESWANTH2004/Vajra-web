@@ -86,7 +86,7 @@ export function Facilities() {
                 className="min-w-0 flex-[0_0_100%] pr-0 lg:pr-6"
               >
                 <div className="grid gap-10 lg:grid-cols-2 lg:gap-16">
-                  <div className="group relative overflow-hidden">
+                  <div className="group relative self-start overflow-hidden">
                     <img
                       src={f.image}
                       alt={f.title}

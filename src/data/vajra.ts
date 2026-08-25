@@ -68,26 +68,26 @@ export const facilities: Facility[] = [
     table: {
       head: ["Parameter", "HR Slitter", "CR Slitter"],
       rows: [
-        ["Min/Max thickness", "0.8 – 5.0mm", "0.1 – 1.0mm"],
-        ["Min/Max width", "400 – 1600mm", "15 – 650mm"],
-        ["Max Coil weight", "30MT", "15MT"],
+        ["Min/Max thickness:", "0.8-5.0mm", "0.1-1.0mm"],
+        ["Min/Max width:", "400-1600mm", "15-650mm"],
+        ["Max Coil weight:", "30MT", "15MT"],
       ],
     },
   },
   {
     id: "mill",
     name: "6Hi Rolling Mill",
-    title: "6HI – Rolling Mill",
+    title: "6HI - Rolling Mill",
     image: rollingMill.url,
     paragraphs: [
-      "Our 6-Hi Rolling Mill is engineered to deliver exceptional precision, surface quality, and consistency for high-performance superalloys and specialty metals. It ensures superior control over thickness, flatness, and mechanical properties—making it ideal for processing stainless steels and superalloys.",
+      "Our 6-Hi Rolling Mill is engineered to deliver exceptional precision, surface quality, and consistency for high-performance superalloys and specialty metals. It ensures superior control over thickness, flatness, and mechanical properties-making it ideal for processing stainless steels and superalloys.",
       "The mill features a six-roll configuration with work rolls, intermediate rolls, and backup rolls, enabling reduced roll deflection and enhanced dimensional accuracy. This advanced setup allows the production of thin gauges with uniform profile and excellent surface finish.",
-      "With integrated automation and control systems, the 6-Hi mill maintains consistent rolling parameters, ensuring repeatable quality and high productivity. Its robust design supports efficient processing of hard-to-deform materials while minimizing defects and improving overall yield.",
+      "With integrated automation and control systems, the 6-Hi mill maintains consistent rolling parameters, ensuring repeatable quality and high productivity. It's robust design supports efficient processing of hard-to-deform materials while minimizing defects and improving overall yield.",
     ],
     specs: [
       { label: "Input Plate thickness", value: "6mm to 8mm" },
-      { label: "Output sheet thickness", value: "0.1mm to 4mm" },
-      { label: "Thickness tolerance", value: "+/- 0.01mm" },
+      { label: "Output sheet Thickness", value: "0.1mm to 4mm" },
+      { label: "Thickness tolerance", value: "(+/-0.01mm)" },
       { label: "Maximum Width", value: "600mm" },
     ],
   },
@@ -101,52 +101,54 @@ export const facilities: Facility[] = [
       "Equipped with advanced drawing machines, heat treatment systems, and stringent quality control processes, we produce wires that meet the demanding requirements of aerospace, automotive, energy, medical, welding, and various industrial applications.",
     ],
     specs: [
-      { label: "Input Diameter", value: "9 – 10mm" },
+      { label: "Input Diameter", value: "9-10mm" },
       { label: "Output Diameter", value: "Upto 0.20mm" },
-      { label: "Form", value: "Upto Dia 2.5mm – Coil; Above Dia 2.5mm – Coil & Cut to length" },
+      { label: "Form", value: "Upto Dia2.5mm - Coil; Above Dia2.5mm - Coil & Cut to length Form" },
     ],
   },
   {
     id: "boggie",
     name: "Boggie Furnace",
-    title: "Heat Treatment — Boggie Furnace",
+    title: "Heat Treatment Furnance - Boggie Furnace",
     image: furnaceBoggie.url,
     paragraphs: [
-      "Our Boggie hearth electric furnace operates with modern control systems for accurate heating cycles and process reliability. Its heavy-duty refractory lining and insulated walls minimize heat loss and improve durability and ensures consistent temperature distribution across the entire load.",
+      "Our Boggie hearth electric furnace operates with modern control systems for accurate heating cycles and process reliability. Its Heavy-duty refractory lining and insulated walls minimize heat loss and improve durability and ensures consistent temperature distribution across the entire load.",
     ],
     specs: [],
   },
   {
     id: "pit",
     name: "Pit Furnace",
-    title: "Heat Treatment — Pit Furnace",
+    title: "Heat Treatment Furnance - Pit Furnace",
     image: furnacePit.url,
     paragraphs: [
-      "10MT Pit furnace is a heat treatment furnace designed for processing cylindrical components in a controlled and uniform heating environment. The furnace chamber is constructed below ground level (pit), allowing components to be suspended vertically for efficient heat treatment.",
+      "10MT Pit furnance is a heat treatment furnace designed for processing cylindrical components in a controlled and uniform heating environment. The furnace chamber is constructed below ground level (pit), allowing components to be suspended vertically for efficient heat treatment.",
     ],
     specs: [],
   },
 ];
-
 export const esrDiagramImage = esrDiagram.url;
 
 export const coldRollingFlow = [
-  "Uncoiler",
   "HR Coil",
+  "Width 1250mm",
+  "Uncoiler",
   "Leveller",
+  "Slitting",
+  "Width 600mm x 2Nos",
   "Looper",
   "6Hi Rolling Mill",
   "Continuous Bright Annealing Line",
-  "Cold Rolled Slitter",
+  "Cold Rolled slitter",
   "Coiler",
 ];
 
 export const finishes = [
   ["2B", "Smooth finish, reflective grey sheen. Most widely used surface finish."],
-  ["Bright Annealed (BA)", "Cold rolled, annealed in a controlled atmosphere to retain a highly reflective finish."],
-  ["Hot Rolled (HR)", "Scaled finish, ideal if surface finish is not a key concern."],
   ["2D", "Cold rolled, low reflective matte surface."],
   ["2E", "Cold rolled, rough and dull finish."],
+  ["Bright Annealed (BA)", "Cold rolled, annealed in a controlled atmosphere to retain a highly reflective finish."],
+  ["Hot Rolled (HR)", "Scaled finish, ideal if surface finish is not a key concern."],
 ];
 
 export const superalloyFlow = [
@@ -190,21 +192,21 @@ export const products: Product[] = [
   { no: 13, group: "Super Alloy", category: "Controlled Expansion Alloy", grade: "INVAR 36", chemistry: "Fe-36Ni", form: "Bar, rod, sheet & wire", application: "Aerospace & Precision Instruments" },
   { no: 14, group: "Super Alloy", category: "Controlled Expansion Alloy", grade: "KOVAR", chemistry: "Fe-29Ni-17Co", form: "Bar, rod, sheet & wire", application: "Aerospace & Medical" },
   { no: 15, group: "Super Alloy", category: "Soft Magnetic Alloy", grade: "Magnetic iron", chemistry: "99Fe-0.12Mn", form: "Rod, strip & wire", application: "Automobile & Electrical Industries" },
-  { no: 16, group: "Stainless Steel", category: "Martensitic & PH", grade: "15-5PH", chemistry: "15Cr-5Ni-4Nb-4Cu-Fe Bal", form: "Bar, rod, sheet & wire", application: "Aerospace, Oil & Gas" },
-  { no: 17, group: "Stainless Steel", category: "Martensitic & PH", grade: "17-4PH", chemistry: "16Cr-4Ni-4Cu-4Nb-Fe Bal", form: "Bar, rod, sheet & wire", application: "Aerospace & Power generation" },
-  { no: 18, group: "Stainless Steel", category: "Martensitic & PH", grade: "14-5PH", chemistry: "14Cr-5Ni-3Nb-Fe Bal", form: "Bar, rod, sheet & wire", application: "Aerospace & Defence" },
-  { no: 19, group: "Stainless Steel", category: "Martensitic & PH", grade: "11-10PH", chemistry: "11Cr-10Ni-2Mo-Fe Bal", form: "Bar, rod, sheet & wire", application: "Aerospace & Defence" },
-  { no: 20, group: "Stainless Steel", category: "Martensitic & PH", grade: "904L", chemistry: "25Ni-19Cr-4Mo-Fe Bal", form: "Bar, rod, sheet & wire", application: "Highly corrosive resistant" },
-  { no: 21, group: "Stainless Steel", category: "Martensitic & PH", grade: "440B", chemistry: "16Cr-1Mn-Fe Bal", form: "Sheets & Coil", application: "Food & Medical" },
+  { no: 16, group: "Stainless Steel", category: "Martensitic & Precipitation Hardening (PH) Stainless Steel", grade: "15-5PH", chemistry: "15Cr-5Ni-4Nb-4Cu-Fe Bal", form: "Bar, Rod, Sheet & wire", application: "Aerospace, Oil & Gas" },
+  { no: 17, group: "Stainless Steel", category: "Martensitic & Precipitation Hardening (PH) Stainless Steel", grade: "17-4PH", chemistry: "16Cr-4Ni-4Cu-4Nb-Fe Bal", form: "Bar, Rod, Sheet & wire", application: "Aerospace & Power generation" },
+  { no: 18, group: "Stainless Steel", category: "Martensitic & Precipitation Hardening (PH) Stainless Steel", grade: "14-5PH", chemistry: "14Cr-5Ni-3Nb-Fe Bal", form: "Bar, Rod, Sheet & wire", application: "Aerospace & Defence" },
+  { no: 19, group: "Stainless Steel", category: "Martensitic & Precipitation Hardening (PH) Stainless Steel", grade: "11-10PH", chemistry: "11-Cr-10Ni-2Mo-Fe Bal", form: "Bar, Rod, Sheet & wire", application: "Aerospace & Defence" },
+  { no: 20, group: "Stainless Steel", category: "Martensitic & Precipitation Hardening (PH) Stainless Steel", grade: "904L", chemistry: "25Ni-19Cr-4Mo-Fe Bal", form: "Bar, Rod, Sheet & wire", application: "Highly corrosive resistant" },
+  { no: 21, group: "Stainless Steel", category: "Martensitic & Precipitation Hardening (PH) Stainless Steel", grade: "440B", chemistry: "16Cr-1Mn-Fe Bal", form: "Sheets & Coil", application: "Food & Medical" },
   { no: 22, group: "Stainless Steel", category: "Austenitic", grade: "304", chemistry: "18Cr-8Ni-Fe Bal", form: "Ingot, bar, rod, sheet & wire", application: "Oil & Gas, Aerospace & Pharma" },
   { no: 23, group: "Stainless Steel", category: "Austenitic", grade: "304L", chemistry: "18Cr-8Ni-Fe Bal", form: "Ingot, bar, rod, sheet & wire", application: "Oil & Gas, Aerospace & Pharma" },
   { no: 24, group: "Stainless Steel", category: "Austenitic", grade: "321", chemistry: "18Cr-10Ni-5Si-Fe Bal", form: "Ingot, bar, rod, sheet & wire", application: "Aerospace, Power generation, Oil & gas" },
-  { no: 25, group: "High Speed Steel", category: "High Speed Steel", grade: "M2", chemistry: "4.2Cr-5Mo-6.4W-1.8V", form: "Bar, rod & wire", application: "Drills & work tools" },
-  { no: 26, group: "High Speed Steel", category: "High Speed Steel", grade: "M3", chemistry: "4.1Cr-5Mo-6.2W-3V", form: "Bar, rod & wire", application: "Highly-wear resistant" },
-  { no: 27, group: "High Speed Steel", category: "High Speed Steel", grade: "M7", chemistry: "3.8Cr-8.6Mo-1.8W-1.9V", form: "Bar, rod & wire", application: "Drill bits & cutting tools" },
-  { no: 28, group: "High Speed Steel", category: "High Speed Steel", grade: "M35", chemistry: "4.2Cr-5Mo-6.4W-4.8Co-1.8V", form: "Bar, rod & wire", application: "Milling cutters, twist drills & reamers" },
-  { no: 29, group: "High Speed Steel", category: "High Speed Steel", grade: "M42", chemistry: "3.8Cr-9.4Mo-1.5W-8Co-1.2V", form: "Bar, rod & wire", application: "Reamers & twist drills" },
-  { no: 30, group: "High Speed Steel", category: "High Speed Steel", grade: "T42", chemistry: "10W-10Co-4Cr-3.5V-3.5Mo", form: "Bar, rod & wire", application: "High stress tools & bits" },
+  { no: 25, group: "High Speed Steel", category: "High Speed Steel", grade: "M2", chemistry: "4.2Cr-5Mo-6.4W-1.8V", form: "Bar, rod & Wire", application: "Drills & work tools" },
+  { no: 26, group: "High Speed Steel", category: "High Speed Steel", grade: "M3", chemistry: "4.1Cr-5Mo-6.2W-3V", form: "Bar, rod & Wire", application: "Highly-wear resistant" },
+  { no: 27, group: "High Speed Steel", category: "High Speed Steel", grade: "M7", chemistry: "3.8Cr-8.6Mo-1.8W-1.9-V", form: "Bar, rod & Wire", application: "Drill bits & cutting tools" },
+  { no: 28, group: "High Speed Steel", category: "High Speed Steel", grade: "M35", chemistry: "4.2Cr-5Mo-6.4W-4.8Co-1.8V", form: "Bar, rod & Wire", application: "Milling Cutters, twist drills & reamers" },
+  { no: 29, group: "High Speed Steel", category: "High Speed Steel", grade: "M42", chemistry: "3.8Cr-9.4Mo-1.5W-8Co1.2V", form: "Bar, rod & Wire", application: "Reamers & twist drills" },
+  { no: 30, group: "High Speed Steel", category: "High Speed Steel", grade: "T42", chemistry: "10W-10Co-4Cr-3.5V-3.5Mo", form: "Bar, rod & Wire", application: "High stress tools & bits" },
 ];
 
 export const testingFacilities = [
