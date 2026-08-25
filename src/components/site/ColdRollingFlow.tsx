@@ -53,7 +53,22 @@ export function ColdRollingFlow() {
       <div className="mx-auto max-w-[88rem] px-5 lg:px-10">
         <SectionHeading title="COLD ROLLING MILL PROCESS FLOW" />
 
-        <div className="mt-12 overflow-x-auto table-scroll-blue pb-4">
+        <div className="mt-10 lg:hidden">
+          <motion.div
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="relative space-y-5"
+          >
+            <span className="absolute top-8 bottom-8 left-5 w-0.5 bg-accent/80" />
+            {processCards.map((card, index) => (
+              <MobileFlowCard key={card.no} card={card} index={index} />
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="mt-12 hidden overflow-x-auto table-scroll-blue pb-4 lg:block">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -100,20 +115,20 @@ export function ColdRollingFlow() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-12 grid gap-8 lg:grid-cols-[0.65fr_1.35fr] lg:items-center"
+          className="mt-10 grid gap-6 lg:mt-12 lg:grid-cols-[0.65fr_1.35fr] lg:items-center lg:gap-8"
         >
           <div>
             <span className="eyebrow text-accent-foreground/60">Reference Diagram</span>
-            <h3 className="mt-3 text-3xl font-semibold text-primary">Complete line overview</h3>
+            <h3 className="mt-3 text-2xl font-semibold text-primary sm:text-3xl">Complete line overview</h3>
             <span className="mt-4 block h-1 w-12 bg-accent" />
           </div>
 
-          <div className="overflow-hidden border border-border bg-white p-4 shadow-[0_28px_70px_-48px_rgba(31,42,90,0.45)] sm:p-5">
+          <div className="overflow-hidden border border-border bg-white p-3 shadow-[0_28px_70px_-48px_rgba(31,42,90,0.45)] sm:p-5">
             <div className="overflow-x-auto table-scroll-blue">
               <img
                 src={coldRollingProcess}
                 alt="Cold rolling process flow showing coil preparation, rolling mill, annealing line and cold rolled slitter stages"
-                className="min-w-[42rem] w-full max-w-none object-contain lg:min-w-0"
+                className="min-w-[34rem] w-full max-w-none object-contain sm:min-w-[42rem] lg:min-w-0"
               />
             </div>
           </div>
@@ -153,6 +168,55 @@ export function ColdRollingFlow() {
         </div>
       </div>
     </section>
+  );
+}
+
+function MobileFlowCard({
+  card,
+  index,
+}: {
+  card: (typeof processCards)[number];
+  index: number;
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 18 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.42, delay: index * 0.035, ease: [0.22, 1, 0.36, 1] }}
+      className="relative pl-12"
+    >
+      <span
+        className={`absolute top-6 left-0 z-10 grid h-10 w-10 place-items-center rounded-full text-display text-xl font-semibold text-white shadow-[0_14px_30px_-18px_rgba(31,42,90,0.8)] ${
+          card.accent ? "bg-accent" : "bg-primary"
+        }`}
+      >
+        {card.no}
+      </span>
+      <div
+        className={`grid grid-cols-[5.75rem_1fr] items-center gap-3 rounded-[8px] border bg-white p-3 shadow-[0_18px_44px_-38px_rgba(31,42,90,0.55)] sm:grid-cols-[6.5rem_1fr] sm:gap-4 sm:p-4 ${
+          card.accent ? "border-accent bg-accent/5" : "border-primary/15"
+        }`}
+      >
+        <div className="grid h-24 place-items-center overflow-hidden bg-white">
+          <img
+            src={card.image}
+            alt=""
+            className="max-h-[74%] max-w-[86%] object-contain sm:max-h-[78%] sm:max-w-[88%]"
+          />
+        </div>
+        <div>
+          <h4
+            className={`text-display text-lg leading-[1.05] font-semibold sm:text-xl ${
+              card.accent ? "text-accent" : "text-primary"
+            }`}
+          >
+            {card.title}
+          </h4>
+          <p className="mt-2 text-sm leading-relaxed text-primary/70">{card.body}</p>
+        </div>
+      </div>
+    </motion.div>
   );
 }
 

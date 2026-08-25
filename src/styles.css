@@ -142,9 +142,12 @@
 
 @utility marquee-track {
   animation: vajra-marquee 38s linear infinite;
+  touch-action: pan-y;
 
-  &:hover {
-    animation-play-state: paused;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 }
 

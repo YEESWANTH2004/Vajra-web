@@ -13,26 +13,27 @@ export function About({ compact = true }: { compact?: boolean }) {
           <Reveal>
             <>
               <div className="relative">
-                <div className="absolute -top-5 -left-5 h-24 w-24 border-t-4 border-l-4 border-accent" />
+                <div className="absolute -top-3 -left-3 h-14 w-14 border-t-3 border-l-3 border-accent sm:-top-5 sm:-left-5 sm:h-24 sm:w-24 sm:border-t-4 sm:border-l-4" />
                 <img
                   src={workers.url}
                   alt="Engineers reviewing operations on the VAJRA plant floor"
                   className="relative aspect-[4/3] w-full object-cover"
                 />
-                <div className="absolute -right-4 -bottom-5 h-28 w-28 border-r-4 border-b-4 border-accent" />
-                <div className="absolute right-5 bottom-5 h-px w-24 bg-accent" />
-                <div className="absolute right-5 bottom-5 h-24 w-px bg-accent" />
+                <div className="absolute -right-3 -bottom-3 h-16 w-16 border-r-3 border-b-3 border-accent sm:-right-4 sm:-bottom-5 sm:h-28 sm:w-28 sm:border-r-4 sm:border-b-4" />
+                <div className="absolute right-3 bottom-3 h-px w-14 bg-accent sm:right-5 sm:bottom-5 sm:w-24" />
+                <div className="absolute right-3 bottom-3 h-14 w-px bg-accent sm:right-5 sm:bottom-5 sm:h-24" />
               </div>
 
               {!compact ? (
-                <div className="mt-12 grid grid-cols-2 border-y border-primary/15 text-primary">
+                <div className="mt-8 grid grid-cols-1 border-y border-primary/15 text-primary sm:mt-12 sm:grid-cols-2">
                   {aboutSectors.map((sector, index) => (
                     <div
                       key={sector}
                       className={[
-                        "eyebrow flex min-h-24 items-center px-6 text-base tracking-normal sm:text-lg",
-                        index % 2 === 0 ? "border-r border-primary/15" : "",
-                        index < aboutSectors.length - 2 ? "border-b border-primary/15" : "",
+                        "eyebrow flex min-h-16 items-center px-4 text-sm tracking-normal sm:min-h-24 sm:px-6 sm:text-lg",
+                        index % 2 === 0 ? "sm:border-r sm:border-primary/15" : "",
+                        index < aboutSectors.length - 1 ? "border-b border-primary/15" : "",
+                        index === aboutSectors.length - 2 ? "sm:border-b-0" : "",
                       ].join(" ")}
                     >
                       {sector}
