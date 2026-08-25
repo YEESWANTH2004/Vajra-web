@@ -78,7 +78,7 @@ export function About({ compact = true }: { compact?: boolean }) {
                 href="/about"
                 className="eyebrow clip-chevron inline-flex bg-primary px-7 py-4 text-primary-foreground transition-transform duration-300 hover:translate-x-1"
               >
-                More About Us
+                Know More
               </a>
             </Reveal>
           ) : null}

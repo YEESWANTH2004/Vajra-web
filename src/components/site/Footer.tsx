@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import logo from "@/assets/logo/vajra-logo.webp";
-import { contactDetails, contactFormFields } from "@/content/contact";
+import { contactDetails } from "@/content/contact";
 import { Reveal } from "./Reveal";
 
 export function Footer() {
@@ -55,65 +55,6 @@ export function Footer() {
             </ul>
           </Reveal>
         </div>
-
-        <Reveal delay={0.1} className="mt-16 border-t border-primary-foreground/15 pt-12">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-            <div>
-              <span className="eyebrow text-accent">Send requirement</span>
-              <h3 className="mt-3 text-3xl font-semibold text-primary-foreground lg:text-4xl">
-                Request a technical quote
-              </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-primary-foreground/65">
-                Share the grade, form, size range and application. Our team can respond with capability details and
-                next steps.
-              </p>
-            </div>
-
-            <form
-              action={`mailto:${contactDetails.email}`}
-              method="post"
-              encType="text/plain"
-              className="grid gap-4 sm:grid-cols-2"
-            >
-              <input
-                name="Name"
-                type="text"
-                placeholder="Name"
-                className="h-12 border border-primary-foreground/15 bg-primary-foreground/5 px-4 text-sm text-primary-foreground outline-none transition-colors placeholder:text-primary-foreground/35 focus:border-accent"
-              />
-              <input
-                name="Company"
-                type="text"
-                placeholder="Company"
-                className="h-12 border border-primary-foreground/15 bg-primary-foreground/5 px-4 text-sm text-primary-foreground outline-none transition-colors placeholder:text-primary-foreground/35 focus:border-accent"
-              />
-              <input
-                name="Email"
-                type="email"
-                placeholder="Email"
-                className="h-12 border border-primary-foreground/15 bg-primary-foreground/5 px-4 text-sm text-primary-foreground outline-none transition-colors placeholder:text-primary-foreground/35 focus:border-accent"
-              />
-              <input
-                name="Phone"
-                type="tel"
-                placeholder="Phone"
-                className="h-12 border border-primary-foreground/15 bg-primary-foreground/5 px-4 text-sm text-primary-foreground outline-none transition-colors placeholder:text-primary-foreground/35 focus:border-accent"
-              />
-              <textarea
-                name="Requirement"
-                placeholder={contactFormFields.requirementPlaceholder}
-                rows={4}
-                className="border border-primary-foreground/15 bg-primary-foreground/5 px-4 py-3 text-sm text-primary-foreground outline-none transition-colors placeholder:text-primary-foreground/35 focus:border-accent sm:col-span-2"
-              />
-              <button
-                type="submit"
-                className="eyebrow bg-accent px-6 py-4 text-accent-foreground transition-transform duration-300 hover:translate-x-1 sm:col-span-2 sm:w-max"
-              >
-                Submit Requirement
-              </button>
-            </form>
-          </div>
-        </Reveal>
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-primary-foreground/15 pt-8">
           <motion.img
