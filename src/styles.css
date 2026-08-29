@@ -109,8 +109,8 @@
   font-family: var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 0.22em;
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 700;
 }
 
 /* Angled chevron shapes echoing the logo slashes */
@@ -135,8 +135,16 @@
 
 @utility grid-blueprint {
   background-image:
-    linear-gradient(to right, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklab, var(--primary) 8%, transparent) 1px, transparent 1px);
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--primary) 8%, transparent) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      to bottom,
+      color-mix(in oklab, var(--primary) 8%, transparent) 1px,
+      transparent 1px
+    );
   background-size: 56px 56px;
 }
 

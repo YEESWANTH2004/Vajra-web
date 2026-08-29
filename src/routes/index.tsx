@@ -31,8 +31,8 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <FormsMarquee />
         <About />
+        <FormsMarquee />
         <Facilities />
         <Testing />
       </main>

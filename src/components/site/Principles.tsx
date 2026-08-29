@@ -25,20 +25,22 @@ function Card({
       style={{ scale, top: `calc(6rem + ${index * 2.2}rem)` }}
       className="group sticky origin-top overflow-hidden border-t-4 border-accent bg-primary px-7 py-8 text-primary-foreground shadow-[0_24px_60px_-30px_rgba(10,16,40,0.7)] lg:px-12 lg:py-10"
     >
-      <div className="grid gap-7 lg:grid-cols-[auto_1fr_minmax(18rem,0.45fr)] lg:items-center lg:gap-12">
-        <span className="text-display text-6xl leading-none font-bold text-accent lg:text-8xl">{card.no}</span>
+      <div className="grid gap-7 lg:grid-cols-[auto_1fr_minmax(22rem,0.5fr)] lg:items-center lg:gap-12">
+        <span className="text-display text-6xl leading-none font-bold text-accent lg:text-8xl">
+          {card.no}
+        </span>
         <div>
           <h3 className="text-3xl font-semibold lg:text-4xl">{card.title}</h3>
           <p className="mt-5 max-w-3xl leading-relaxed text-primary-foreground/75">{card.body}</p>
         </div>
-        <div className="relative min-h-44 overflow-hidden border border-primary-foreground/10 bg-navy-deep lg:min-h-48">
+        <div className="relative min-h-52 overflow-hidden border border-primary-foreground/10 bg-navy-deep lg:min-h-60">
           <img
             src={cardImages[index]}
             alt=""
-            className="absolute inset-0 h-full w-full object-cover opacity-70 transition duration-700 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full object-cover opacity-100 transition duration-700 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/45 to-transparent" />
-          <div className="absolute inset-0 bg-navy-deep/20" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/35 via-primary/10 to-transparent" />
+          <div className="absolute inset-0 bg-navy-deep/5" />
           <span className="absolute top-4 left-4 h-10 w-10 border-t-2 border-l-2 border-accent" />
           <span className="absolute right-4 bottom-4 h-10 w-10 border-r-2 border-b-2 border-accent" />
         </div>

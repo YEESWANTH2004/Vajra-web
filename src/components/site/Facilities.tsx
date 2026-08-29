@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { facilities } from "@/data/vajra";
 import { SectionHeading } from "./Reveal";
 
@@ -40,29 +41,34 @@ export function Facilities() {
           <SectionHeading eyebrow="Manufacturing" title="Our Facilities" invert />
           <div className="flex gap-3">
             <button
+              type="button"
               aria-label="Previous facility"
               onClick={() => embla?.scrollPrev()}
-              className="h-12 w-12 border border-primary-foreground/25 text-primary-foreground transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex h-12 w-12 items-center justify-center border border-primary-foreground/25 text-primary-foreground transition-colors hover:border-accent hover:text-accent"
             >
-              ←
+              <ArrowLeft size={18} strokeWidth={2} />
             </button>
             <button
+              type="button"
               aria-label="Next facility"
               onClick={() => embla?.scrollNext()}
-              className="h-12 w-12 border border-primary-foreground/25 text-primary-foreground transition-colors hover:border-accent hover:text-accent"
+              className="inline-flex h-12 w-12 items-center justify-center border border-primary-foreground/25 text-primary-foreground transition-colors hover:border-accent hover:text-accent"
             >
-              →
+              <ArrowRight size={18} strokeWidth={2} />
             </button>
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-b border-primary-foreground/15 pb-4">
+        <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-b border-primary-foreground/15 pb-5">
           {facilities.map((f, i) => (
             <button
+              type="button"
               key={f.id}
               onClick={() => embla?.scrollTo(i)}
-              className={`eyebrow transition-colors ${
-                selected === i ? "text-accent" : "text-primary-foreground/45 hover:text-primary-foreground"
+              className={`eyebrow text-[0.82rem] font-extrabold tracking-[0.18em] transition-colors sm:text-[0.9rem] ${
+                selected === i
+                  ? "text-accent"
+                  : "text-primary-foreground/45 hover:text-primary-foreground"
               }`}
             >
               {f.name}
@@ -98,7 +104,9 @@ export function Facilities() {
                     <span className="absolute bottom-0 left-0 h-1 w-32 bg-accent" />
                   </div>
                   <div className="flex flex-col justify-center">
-                    <h3 className="text-3xl font-semibold text-primary-foreground lg:text-4xl">{f.title}</h3>
+                    <h3 className="text-3xl font-semibold text-primary-foreground lg:text-4xl">
+                      {f.title}
+                    </h3>
                     <div className="mt-5 space-y-4">
                       {f.paragraphs.map((p, i) => (
                         <p key={i} className="text-sm leading-relaxed text-primary-foreground/70">
@@ -119,7 +127,9 @@ export function Facilities() {
                             className="flex flex-wrap justify-between gap-3 py-3"
                           >
                             <dt className="eyebrow text-primary-foreground/50">{s.label}</dt>
-                            <dd className="text-display text-lg font-semibold text-accent">{s.value}</dd>
+                            <dd className="text-display text-lg font-semibold text-accent">
+                              {s.value}
+                            </dd>
                           </motion.div>
                         ))}
                       </dl>
@@ -145,7 +155,9 @@ export function Facilities() {
                               {r.map((c, i) => (
                                 <td
                                   key={i}
-                                  className={i === 0 ? "py-3 text-primary-foreground/70" : "py-3 text-accent"}
+                                  className={
+                                    i === 0 ? "py-3 text-primary-foreground/70" : "py-3 text-accent"
+                                  }
                                 >
                                   {c}
                                 </td>

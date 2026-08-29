@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Header } from "@/components/site/Header";
 import { PageHero } from "@/components/site/PageHero";
-import { ColdRollingFlow } from "@/components/site/ColdRollingFlow";
 import { Portfolio } from "@/components/site/Portfolio";
 import { Footer } from "@/components/site/Footer";
 
@@ -32,7 +31,6 @@ function ProductsPage() {
           highlight="Portfolio"
           description="A focused product range covering nickel, cobalt and iron-based superalloys, stainless steels and high speed steels."
         />
-        <ColdRollingFlow />
         <Portfolio />
       </main>
       <Footer />
