@@ -79,8 +79,8 @@ export function FormsMarquee() {
                       {formDetails[form.label]}
                     </p>
                   </div>
-                  <div className="product-image relative flex h-44 items-center justify-center bg-surface/70 p-5 transition-colors duration-300 group-hover:bg-primary-foreground sm:h-52">
-                    <div className="absolute top-4 right-4 bottom-4 left-4 border border-accent/0 transition-colors duration-300 group-hover:border-accent/50" />
+                  <div className="product-image relative flex h-44 items-center justify-center bg-transparent p-3 transition-colors duration-300 sm:h-52 sm:bg-surface/70 sm:p-5 sm:group-hover:bg-primary-foreground">
+                    <div className="absolute top-4 right-4 bottom-4 left-4 hidden border border-accent/0 transition-colors duration-300 group-hover:border-accent/50 sm:block" />
                     <img
                       src={form.url}
                       alt={`${form.label} product form`}
