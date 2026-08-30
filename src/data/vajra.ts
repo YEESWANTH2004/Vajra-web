@@ -1,31 +1,13 @@
-import esrFurnace from "@/assets/esr-furnace.jpg.asset.json";
-import esrDiagram from "@/assets/esr-diagram.jpg.asset.json";
-import slitter from "@/assets/slitter.jpg.asset.json";
-import rollingMill from "@/assets/rolling-mill.jpg.asset.json";
-import wireDrawing from "@/assets/wire-drawing.jpg.asset.json";
-import furnaceBoggie from "@/assets/furnace-boggie.jpg.asset.json";
-import furnacePit from "@/assets/furnace-pit.jpg.asset.json";
-import testTensile from "@/assets/test-tensile.jpg.asset.json";
-import testHardness from "@/assets/test-hardness.jpg.asset.json";
-import testFurnace from "@/assets/test-furnace.jpg.asset.json";
-import testMicro from "@/assets/test-micro.jpg.asset.json";
-import testOes from "@/assets/test-oes.jpg.asset.json";
-import formBar from "@/assets/form-bar.png.asset.json";
-import formRods from "@/assets/form-rods.png.asset.json";
-import formPlates from "@/assets/form-plates.png.asset.json";
-import formBundle from "@/assets/form-bundle.png.asset.json";
-import formCoil from "@/assets/form-coil.png.asset.json";
-import formSheet from "@/assets/form-sheet.png.asset.json";
-import formWire from "@/assets/form-wire.png.asset.json";
+const asset = (filename: string) => `/assets/${filename}`;
 
 export const productForms = [
-  { url: formBar.url, label: "Ingot" },
-  { url: formRods.url, label: "Bars" },
-  { url: formPlates.url, label: "Plates" },
-  { url: formBundle.url, label: "Rods" },
-  { url: formCoil.url, label: "Coil" },
-  { url: formSheet.url, label: "Sheet" },
-  { url: formWire.url, label: "Wire" },
+  { url: asset("form-bar.png"), label: "Ingot" },
+  { url: asset("form-rods.png"), label: "Bars" },
+  { url: asset("form-plates.png"), label: "Plates" },
+  { url: asset("form-bundle.png"), label: "Rods" },
+  { url: asset("form-coil.png"), label: "Coil" },
+  { url: asset("form-sheet.png"), label: "Sheet" },
+  { url: asset("form-wire.png"), label: "Wire" },
 ];
 
 export type Facility = {
@@ -43,7 +25,7 @@ export const facilities: Facility[] = [
     id: "esr",
     name: "ESR Furnace",
     title: "Electroslag Remelting (ESR) Furnace",
-    image: esrFurnace.url,
+    image: asset("esr-furnace.jpg"),
     paragraphs: [
       "Equipped with ESR to produce ultra-clean, high-integrity superalloys and specialty steels for critical applications. By utilizing a controlled remelting process, the furnace ensures superior metallurgical quality, uniform structure, and enhanced mechanical performance.",
       "Engineered for precision and consistency, our ESR facility has advanced process controls to maintain optimal melting parameters, ensuring repeatable quality and high production efficiency.",
@@ -58,7 +40,7 @@ export const facilities: Facility[] = [
     id: "slitter",
     name: "Coil Slitter",
     title: "Hot Rolled & Cold Rolled Coil Slitter",
-    image: slitter.url,
+    image: asset("slitter.jpg"),
     paragraphs: [
       "Our Slitter Line is designed for precision cutting of rolled coils into narrow strips with consistent width, clean edges, and minimal material loss. Engineered for high-strength materials such as stainless steel and superalloys, the system ensures reliable performance and superior output quality.",
       "Built with robust slitting heads and high-precision tooling, the line delivers accurate strip widths while maintaining excellent edge finish. Advanced tension control and guiding systems ensure smooth coil handling, preventing deformation and ensuring uniform slit quality across the entire length.",
@@ -78,7 +60,7 @@ export const facilities: Facility[] = [
     id: "mill",
     name: "6Hi Rolling Mill",
     title: "6HI - Rolling Mill",
-    image: rollingMill.url,
+    image: asset("rolling-mill.jpg"),
     paragraphs: [
       "Our 6-Hi Rolling Mill is engineered to deliver exceptional precision, surface quality, and consistency for high-performance superalloys and specialty metals. It ensures superior control over thickness, flatness, and mechanical properties-making it ideal for processing stainless steels and superalloys.",
       "The mill features a six-roll configuration with work rolls, intermediate rolls, and backup rolls, enabling reduced roll deflection and enhanced dimensional accuracy. This advanced setup allows the production of thin gauges with uniform profile and excellent surface finish.",
@@ -95,7 +77,7 @@ export const facilities: Facility[] = [
     id: "wire",
     name: "Wire Drawing",
     title: "Precision Wire Manufacturing Excellence",
-    image: wireDrawing.url,
+    image: asset("wire-drawing.jpg"),
     paragraphs: [
       "Our state-of-the-art Wire Drawing Facility is designed to manufacture high-quality superalloys, Special steels and Titanium alloy wires with exceptional dimensional accuracy, surface finish, and mechanical properties.",
       "Equipped with advanced drawing machines, heat treatment systems, and stringent quality control processes, we produce wires that meet the demanding requirements of aerospace, automotive, energy, medical, welding, and various industrial applications.",
@@ -110,7 +92,7 @@ export const facilities: Facility[] = [
     id: "boggie",
     name: "Boggie Furnace",
     title: "Heat Treatment Furnance - Boggie Furnace",
-    image: furnaceBoggie.url,
+    image: asset("furnace-boggie.jpg"),
     paragraphs: [
       "Our Boggie hearth electric furnace operates with modern control systems for accurate heating cycles and process reliability. Its Heavy-duty refractory lining and insulated walls minimize heat loss and improve durability and ensures consistent temperature distribution across the entire load.",
     ],
@@ -120,14 +102,14 @@ export const facilities: Facility[] = [
     id: "pit",
     name: "Pit Furnace",
     title: "Heat Treatment Furnance - Pit Furnace",
-    image: furnacePit.url,
+    image: asset("furnace-pit.jpg"),
     paragraphs: [
       "10MT Pit furnance is a heat treatment furnace designed for processing cylindrical components in a controlled and uniform heating environment. The furnace chamber is constructed below ground level (pit), allowing components to be suspended vertically for efficient heat treatment.",
     ],
     specs: [],
   },
 ];
-export const esrDiagramImage = esrDiagram.url;
+export const esrDiagramImage = asset("esr-diagram.jpg");
 
 export const coldRollingFlow = [
   "HR Coil",
@@ -210,9 +192,9 @@ export const products: Product[] = [
 ];
 
 export const testingFacilities = [
-  { title: "Tensile Testing", image: testTensile.url },
-  { title: "Hardness Testing", image: testHardness.url },
-  { title: "Heat Treatment Furnace", image: testFurnace.url },
-  { title: "Microstructure Analysis", image: testMicro.url },
-  { title: "Optical Emission Spectrometer", image: testOes.url },
+  { title: "Tensile Testing", image: asset("test-tensile.jpg") },
+  { title: "Hardness Testing", image: asset("test-hardness.jpg") },
+  { title: "Heat Treatment Furnace", image: asset("test-furnace.jpg") },
+  { title: "Microstructure Analysis", image: asset("test-micro.jpg") },
+  { title: "Optical Emission Spectrometer", image: asset("test-oes.jpg") },
 ];

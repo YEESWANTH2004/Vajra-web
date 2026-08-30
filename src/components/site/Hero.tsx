@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import hero from "@/assets/hero.jpg.asset.json";
 
 const industries = [
   "Aerospace",
@@ -21,7 +20,7 @@ export function Hero() {
     <section id="top" ref={ref} className="relative min-h-[100svh] overflow-hidden bg-navy-deep">
       <motion.div style={{ y, scale }} className="absolute inset-0 origin-center">
         <img
-          src={hero.url}
+          src="/assets/hero.jpg"
           alt="Vajra Alloys ESR furnace on the plant floor"
           className="h-full w-full object-cover"
         />

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import coldRollingProcess from "@/assets/coldrolling-process.png";
 import { finishes } from "@/data/vajra";
 import { SectionHeading } from "./Reveal";
 
@@ -25,7 +24,7 @@ export function ColdRollingFlow() {
           <div className="overflow-hidden border border-border bg-white p-3 shadow-[0_28px_70px_-48px_rgba(31,42,90,0.45)] sm:p-5">
             <div className="overflow-x-auto table-scroll-blue">
               <img
-                src={coldRollingProcess}
+                src="/assets/coldrolling-process.png"
                 alt="Cold rolling process flow showing coil preparation, rolling mill, annealing line and cold rolled slitter stages"
                 className="min-w-[34rem] w-full max-w-none object-contain sm:min-w-[42rem] lg:min-w-0"
               />

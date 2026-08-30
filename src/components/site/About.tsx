@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import workers from "@/assets/workers.jpg.asset.json";
 import { aboutParagraphs, aboutPreview, aboutSectors, aboutStandards, aboutTitle } from "@/content/about";
 import { Reveal, SectionHeading } from "./Reveal";
 
@@ -15,7 +14,7 @@ export function About({ compact = true }: { compact?: boolean }) {
               <div className="relative">
                 <div className="absolute -top-3 -left-3 h-14 w-14 border-t-3 border-l-3 border-accent sm:-top-5 sm:-left-5 sm:h-24 sm:w-24 sm:border-t-4 sm:border-l-4" />
                 <img
-                  src={workers.url}
+                  src="/assets/workers.jpg"
                   alt="Engineers reviewing operations on the VAJRA plant floor"
                   className="relative aspect-[4/3] w-full object-cover"
                 />

@@ -1,12 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { principles } from "@/content/about";
-import esrFurnace from "@/assets/esr-furnace.jpg.asset.json";
-import rollingMill from "@/assets/rolling-mill.jpg.asset.json";
-import testOes from "@/assets/test-oes.jpg.asset.json";
 import { SectionHeading } from "./Reveal";
 
-const cardImages = [esrFurnace.url, rollingMill.url, testOes.url];
+const cardImages = ["/assets/esr-furnace.jpg", "/assets/rolling-mill.jpg", "/assets/test-oes.jpg"];
 
 function Card({
   card,

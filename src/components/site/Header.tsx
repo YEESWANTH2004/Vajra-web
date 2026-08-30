@@ -1,7 +1,6 @@
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { Globe, Mail, MapPin, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo/vajra-logo.webp";
 import { contactDetails } from "@/content/contact";
 import { navigationLinks } from "@/content/navigation";
 
@@ -37,28 +36,28 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="hidden border-b border-primary-foreground/15 bg-navy-deep text-xs text-primary-foreground/80 lg:block">
-        <div className="mx-auto flex h-9 max-w-[88rem] items-center justify-between gap-6 px-5 lg:px-10">
-          <div className="flex min-w-0 items-center gap-2">
+      <div className="border-b border-primary-foreground/15 bg-navy-deep text-[0.68rem] text-primary-foreground/80 sm:text-xs">
+        <div className="mx-auto flex min-h-9 max-w-[88rem] flex-wrap items-center justify-center gap-x-4 gap-y-1 px-5 py-1.5 lg:h-9 lg:justify-between lg:gap-6 lg:px-10 lg:py-0">
+          <div className="flex min-w-0 basis-full items-center justify-center gap-2 lg:basis-auto lg:justify-start">
             <MapPin size={14} strokeWidth={1.8} className="shrink-0 text-accent" />
-            <span className="truncate">
+            <span className="truncate text-center lg:text-left">
               {contactDetails.plant[0]} {contactDetails.plant[1]}
             </span>
           </div>
-          <div className="flex shrink-0 items-center gap-6">
+          <div className="flex min-w-0 flex-wrap items-center justify-center gap-x-4 gap-y-1 lg:shrink-0 lg:gap-6">
             <a
               href={`mailto:${contactDetails.email}`}
-              className="flex items-center gap-2 transition-colors hover:text-accent"
+              className="flex min-w-0 items-center gap-2 transition-colors hover:text-accent"
             >
               <Mail size={14} strokeWidth={1.8} />
-              <span>{contactDetails.email}</span>
+              <span className="truncate">{contactDetails.email}</span>
             </a>
             <a
               href={`https://${contactDetails.website}`}
-              className="flex items-center gap-2 transition-colors hover:text-accent"
+              className="flex min-w-0 items-center gap-2 transition-colors hover:text-accent"
             >
               <Globe size={14} strokeWidth={1.8} />
-              <span>{contactDetails.website}</span>
+              <span className="truncate">{contactDetails.website}</span>
             </a>
           </div>
         </div>
@@ -66,7 +65,7 @@ export function Header() {
       <div className="mx-auto flex h-20 max-w-[88rem] items-center justify-between px-5 lg:px-10">
         <a href="/" className="flex items-center">
           <img
-            src={logo}
+            src="/assets/vajra-logo.webp"
             alt="Vajra Alloys"
             className={`h-10 w-auto transition duration-300 lg:h-12 ${
               solid || open ? "" : "brightness-0 invert"
@@ -131,7 +130,7 @@ export function Header() {
                   initial={{ opacity: 0, x: -10 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.22, delay: navigationLinks.indexOf(l) * 0.035 }}
-                  className="eyebrow border-b border-border py-4 text-base font-extrabold tracking-[0.14em] text-primary/90 transition-colors last:border-b-0 hover:text-primary"
+                  className="eyebrow border-b border-border py-4 text-center text-base font-extrabold tracking-[0.14em] text-primary/90 transition-colors last:border-b-0 hover:text-primary"
                 >
                   {l.label}
                 </motion.a>

@@ -1,6 +1,5 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import hero from "@/assets/hero.jpg.asset.json";
 
 export function PageHero({
   eyebrow,
@@ -21,7 +20,7 @@ export function PageHero({
   return (
     <section ref={ref} className="relative min-h-[72svh] overflow-hidden bg-navy-deep">
       <motion.div style={{ y, scale }} className="absolute inset-0 origin-center">
-        <img src={hero.url} alt="" className="h-full w-full object-cover" />
+        <img src="/assets/hero.jpg" alt="" className="h-full w-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy-deep via-navy-deep/88 to-navy-deep/35" />
         <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-navy-deep/65" />
       </motion.div>

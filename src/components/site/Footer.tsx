@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logo from "@/assets/logo/vajra-logo.webp";
 import { contactDetails } from "@/content/contact";
 import { Reveal } from "./Reveal";
 
@@ -58,7 +57,7 @@ export function Footer() {
 
         <div className="mt-16 flex flex-wrap items-center justify-between gap-6 border-t border-primary-foreground/15 pt-8">
           <motion.img
-            src={logo}
+            src="/assets/vajra-logo.webp"
             alt="Vajra Alloys"
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}

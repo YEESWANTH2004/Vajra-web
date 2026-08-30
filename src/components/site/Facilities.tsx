@@ -59,16 +59,16 @@ export function Facilities() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-wrap gap-x-7 gap-y-4 border-b border-primary-foreground/15 pb-5">
+        <div className="mt-10 grid grid-cols-2 gap-2 border-b border-primary-foreground/15 pb-5 sm:flex sm:flex-wrap sm:gap-x-7 sm:gap-y-4">
           {facilities.map((f, i) => (
             <button
               type="button"
               key={f.id}
               onClick={() => embla?.scrollTo(i)}
-              className={`eyebrow text-[0.82rem] font-extrabold tracking-[0.18em] transition-colors sm:text-[0.9rem] ${
+              className={`eyebrow min-h-12 border px-3 py-3 text-center text-[0.72rem] font-extrabold tracking-[0.14em] transition-colors sm:min-h-0 sm:border-0 sm:px-0 sm:py-0 sm:text-[0.9rem] sm:tracking-[0.18em] ${
                 selected === i
-                  ? "text-accent"
-                  : "text-primary-foreground/45 hover:text-primary-foreground"
+                  ? "border-accent bg-accent text-accent-foreground sm:bg-transparent sm:text-accent"
+                  : "border-primary-foreground/18 bg-primary-foreground/[0.04] text-primary-foreground/62 hover:border-primary-foreground/35 hover:text-primary-foreground sm:bg-transparent sm:text-primary-foreground/45"
               }`}
             >
               {f.name}

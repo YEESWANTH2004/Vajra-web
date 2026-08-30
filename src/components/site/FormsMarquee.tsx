@@ -62,7 +62,7 @@ export function FormsMarquee() {
         <div className="mt-14 grid gap-5 lg:grid-cols-2">
           {productForms.map((form, index) => (
             <Reveal key={form.label} delay={index * 0.04}>
-              <figure className="group relative overflow-hidden border border-primary/15 bg-background transition duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[0_22px_55px_rgba(31,42,90,0.16)]">
+              <figure className="group relative overflow-hidden border border-primary/15 bg-transparent transition duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-[0_22px_55px_rgba(31,42,90,0.16)]">
                 <div className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-accent transition-transform duration-300 group-hover:scale-x-100" />
                 <div className="grid min-h-[17rem] items-center gap-5 p-5 sm:grid-cols-[0.9fr_1fr] sm:p-6">
                   <div className="product-copy">
@@ -79,8 +79,8 @@ export function FormsMarquee() {
                       {formDetails[form.label]}
                     </p>
                   </div>
-                  <div className="product-image relative flex h-44 items-center justify-center bg-transparent p-3 transition-colors duration-300 sm:h-52 sm:bg-surface/70 sm:p-5 sm:group-hover:bg-primary-foreground">
-                    <div className="absolute top-4 right-4 bottom-4 left-4 hidden border border-accent/0 transition-colors duration-300 group-hover:border-accent/50 sm:block" />
+                  <div className="product-image relative flex h-44 items-center justify-center bg-surface/70 p-3 transition-colors duration-300 group-hover:bg-primary-foreground sm:h-52 sm:p-5">
+                    <div className="absolute top-4 right-4 bottom-4 left-4 border border-accent/0 transition-colors duration-300 group-hover:border-accent/50" />
                     <img
                       src={form.url}
                       alt={`${form.label} product form`}
